@@ -33,8 +33,5 @@
       "cookyii\\modules\\Account\\": "",
       "resources\\": "./resources"
     }
-  },
-  "extra": {
-    "bootstrap": "cookyii\\modules\\Account\\Bootstrap"
   }
 }
