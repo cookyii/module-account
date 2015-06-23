@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2e4186cd9a5a885b0571fdacc2e6f9c1",
+    "hash": "d11b5ff2642964d3f67f896b7e187e01",
     "packages": [
         {
             "name": "bower-asset/fontawesome",
@@ -312,23 +312,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-media.git",
-                "reference": "85399fa6b711946b1941b8ce77ae207960cef6bd"
+                "reference": "344b22af7797038549b2fea39e532723b7cb565a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-media/zipball/85399fa6b711946b1941b8ce77ae207960cef6bd",
-                "reference": "85399fa6b711946b1941b8ce77ae207960cef6bd",
+                "url": "https://api.github.com/repos/cookyii/module-media/zipball/344b22af7797038549b2fea39e532723b7cb565a",
+                "reference": "344b22af7797038549b2fea39e532723b7cb565a",
                 "shasum": ""
             },
             "require": {
                 "cookyii/base": "dev-master",
-                "cookyii/module-account": "dev-master",
                 "php": ">=5.4.0"
             },
             "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "cookyii\\modules\\Media\\Bootstrap"
-            },
             "autoload": {
                 "psr-4": {
                     "cookyii\\modules\\Media\\": "",
@@ -360,7 +356,7 @@
                 "video",
                 "yii2"
             ],
-            "time": "2015-06-23 10:53:27"
+            "time": "2015-06-23 11:38:33"
         },
         {
             "name": "cookyii/module-postman",
@@ -368,26 +364,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-postman.git",
-                "reference": "c67faebd3d25e64a027bbadf3277a7bf3bbf29e0"
+                "reference": "165f2596f64d986d31526b2416df266cc2398c78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/c67faebd3d25e64a027bbadf3277a7bf3bbf29e0",
-                "reference": "c67faebd3d25e64a027bbadf3277a7bf3bbf29e0",
+                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/165f2596f64d986d31526b2416df266cc2398c78",
+                "reference": "165f2596f64d986d31526b2416df266cc2398c78",
                 "shasum": ""
             },
             "require": {
                 "cookyii/base": "dev-master",
-                "cookyii/module-account": "dev-master",
                 "cookyii/module-media": "dev-master",
-                "php": ">=5.5.0",
+                "php": ">=5.4.0",
                 "rmrevin/yii2-fontawesome": "~2.10"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
                     "cookyii\\modules\\Postman\\": "",
-                    "resources\\": "./resources"
+                    "resources\\Postman\\": "./resources"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -412,7 +407,7 @@
                 "queue",
                 "yii2"
             ],
-            "time": "2015-06-23 11:02:34"
+            "time": "2015-06-23 11:47:03"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -648,13 +643,12 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "cookyii/base": 20,
-        "cookyii/module-media": 20,
         "cookyii/module-postman": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"
