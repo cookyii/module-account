@@ -26,7 +26,11 @@
   "require": {
     "php": ">=5.4.0",
 
-    "cookyii/base": "dev-master"
+    "cookyii/base": "dev-master",
+    "cookyii/module-media": "dev-master",
+    "cookyii/module-postman": "dev-master",
+
+    "rmrevin/yii2-fontawesome": "~2.10"
   },
   "autoload": {
     "psr-4": {
