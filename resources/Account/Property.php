@@ -8,7 +8,7 @@ namespace resources\Account;
 
 /**
  * Class Property
- * @package resources\User
+ * @package resources\Account
  *
  * @property integer $account_id
  * @property string $key
@@ -25,7 +25,7 @@ class Property extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            'yii\behaviors\TimestampBehavior',
+            \yii\behaviors\TimestampBehavior::className(),
         ];
     }
 

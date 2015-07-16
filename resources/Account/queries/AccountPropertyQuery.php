@@ -8,7 +8,7 @@ namespace resources\Account\queries;
 
 /**
  * Class AccountPropertyQuery
- * @package resources\User\queries
+ * @package resources\Account\queries
  */
 class AccountPropertyQuery extends \yii\db\ActiveQuery
 {
