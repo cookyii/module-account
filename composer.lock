@@ -266,17 +266,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/base.git",
-                "reference": "c6338cdedecedb80d59cc6e3bc83df841dc6cc54"
+                "reference": "2465fe5232a09a5ea6e2021daededdb3320cfb30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/base/zipball/c6338cdedecedb80d59cc6e3bc83df841dc6cc54",
-                "reference": "c6338cdedecedb80d59cc6e3bc83df841dc6cc54",
+                "url": "https://api.github.com/repos/cookyii/base/zipball/2465fe5232a09a5ea6e2021daededdb3320cfb30",
+                "reference": "2465fe5232a09a5ea6e2021daededdb3320cfb30",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
-                "yiisoft/yii2": "2.0.*"
+                "yiisoft/yii2": "2.0.*",
+                "yiisoft/yii2-faker": "2.0.*"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -304,7 +305,7 @@
                 "cookyii",
                 "yii2"
             ],
-            "time": "2015-07-11 15:18:39"
+            "time": "2015-07-16 20:52:36"
         },
         {
             "name": "cookyii/module-media",
@@ -312,12 +313,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-media.git",
-                "reference": "52d271a8ad39fd0cd840c0dc9de19020fa1fd5ea"
+                "reference": "9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-media/zipball/52d271a8ad39fd0cd840c0dc9de19020fa1fd5ea",
-                "reference": "52d271a8ad39fd0cd840c0dc9de19020fa1fd5ea",
+                "url": "https://api.github.com/repos/cookyii/module-media/zipball/9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32",
+                "reference": "9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32",
                 "shasum": ""
             },
             "require": {
@@ -358,7 +359,7 @@
                 "video",
                 "yii2"
             ],
-            "time": "2015-07-11 14:26:49"
+            "time": "2015-07-11 15:23:12"
         },
         {
             "name": "cookyii/module-postman",
@@ -366,12 +367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-postman.git",
-                "reference": "3d5655240cb7d14ece9ff59df935bbd52478ccd3"
+                "reference": "560707c5447f397128f0a52fe4d1d677ae6929be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/3d5655240cb7d14ece9ff59df935bbd52478ccd3",
-                "reference": "3d5655240cb7d14ece9ff59df935bbd52478ccd3",
+                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/560707c5447f397128f0a52fe4d1d677ae6929be",
+                "reference": "560707c5447f397128f0a52fe4d1d677ae6929be",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +410,7 @@
                 "queue",
                 "yii2"
             ],
-            "time": "2015-07-11 14:31:04"
+            "time": "2015-07-16 20:51:03"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -454,6 +455,58 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2015-05-29 06:29:14"
         },
         {
             "name": "imagine/imagine",
@@ -690,6 +743,53 @@
             "keywords": [
                 "composer",
                 "extension installer",
+                "yii2"
+            ],
+            "time": "2015-03-01 06:22:44"
+        },
+        {
+            "name": "yiisoft/yii2-faker",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-faker.git",
+                "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
+                "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\faker\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Jebri",
+                    "email": "mark.github@yandex.ru"
+                }
+            ],
+            "description": "Fixture generator. The Faker integration for the Yii framework.",
+            "keywords": [
+                "Fixture",
+                "faker",
                 "yii2"
             ],
             "time": "2015-03-01 06:22:44"
