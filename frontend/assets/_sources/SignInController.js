@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('CrmApp')
+angular.module('FrontendApp')
 
   .controller('SignInController', [
     '$scope', '$http', 'ToastScope',

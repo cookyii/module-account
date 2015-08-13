@@ -4,27 +4,18 @@
  * @author Revin Roman
  */
 
-namespace cookyii\modules\Account\crm;
+namespace cookyii\modules\Account\frontend;
 
 use cookyii\modules\Account;
-use rmrevin\yii\fontawesome\FA;
 
 /**
  * Class Module
- * @package cookyii\modules\Account\crm
+ * @package cookyii\modules\Account\frontend
  */
-class Module extends \yii\base\Module implements \crm\interfaces\CrmModuleInterface, \yii\base\BootstrapInterface
+class Module extends \yii\base\Module implements \yii\base\BootstrapInterface
 {
 
     public $defaultRoute = 'sign/in';
-
-    /**
-     * @inheritdoc
-     */
-    public function menu($Controller)
-    {
-        return [];
-    }
 
     /**
      * @inheritdoc

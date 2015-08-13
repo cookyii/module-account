@@ -4,11 +4,11 @@
  * @author Revin Roman
  */
 
-namespace cookyii\modules\Account\crm\forms;
+namespace cookyii\modules\Account\frontend\forms;
 
 /**
  * Class SignInForm
- * @package cookyii\modules\Account\crm\forms
+ * @package cookyii\modules\Account\frontend\forms
  */
 class SignInForm extends \yii\base\Model
 {
@@ -73,25 +73,23 @@ class SignInForm extends \yii\base\Model
      */
     public function login()
     {
-        if ($this->validate()) {
-            $Account = $this->getAccount();
+        $Account = $this->getAccount();
 
-            if (true === ($reason = $Account->isAvailable())) {
-                return User()->login(
-                    $Account,
-                    $this->remember === 'true'
-                        ? static::REMEMBER_TIME
-                        : 0
-                );
-            } else {
-                switch ($reason) {
-                    case 'deleted':
-                        $this->addError('email', \Yii::t('account', 'Account removed.'));
-                        break;
-                    case 'not-activated':
-                        $this->addError('email', \Yii::t('account', 'Account is not activated.'));
-                        break;
-                }
+        if (true === ($reason = $Account->isAvailable())) {
+            return User()->login(
+                $Account,
+                $this->remember === 'true'
+                    ? static::REMEMBER_TIME
+                    : 0
+            );
+        } else {
+            switch ($reason) {
+                case 'deleted':
+                    $this->addError('email', \Yii::t('account', 'Account removed.'));
+                    break;
+                case 'not-activated':
+                    $this->addError('email', \Yii::t('account', 'Account is not activated.'));
+                    break;
             }
         }
 

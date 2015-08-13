@@ -1,15 +1,16 @@
 "use strict";
 
-angular.module('CrmApp')
+angular.module('FrontendApp')
 
-  .controller('SignInController', [
+  .controller('SignUpController', [
     '$scope', '$http', 'ToastScope',
     function ($scope, $http, ToastScope) {
       var _config = {},
         defaultValues = {
+          name: null,
           email: null,
           password: null,
-          remember: true
+          password_app: null
         },
         defaultErrors = {};
 
@@ -33,7 +34,7 @@ angular.module('CrmApp')
           url: $form.prop('action'),
           data: jQuery.param({
             _csrf: angular.element('meta[name="csrf-token"]').attr('content'),
-            SignInForm: $scope.data
+            SignUpForm: $scope.data
           }),
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

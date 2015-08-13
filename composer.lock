@@ -314,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/base.git",
-                "reference": "08db6d4434598ada264a5f4bdc0b56f12a13601d"
+                "reference": "ec5ab62209cb7d510f47c8167ef5eb666661bd09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/base/zipball/08db6d4434598ada264a5f4bdc0b56f12a13601d",
-                "reference": "08db6d4434598ada264a5f4bdc0b56f12a13601d",
+                "url": "https://api.github.com/repos/cookyii/base/zipball/ec5ab62209cb7d510f47c8167ef5eb666661bd09",
+                "reference": "ec5ab62209cb7d510f47c8167ef5eb666661bd09",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "cookyii",
                 "yii2"
             ],
-            "time": "2015-07-19 11:18:46"
+            "time": "2015-07-20 10:40:55"
         },
         {
             "name": "cookyii/module-media",
@@ -361,12 +361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-media.git",
-                "reference": "9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32"
+                "reference": "9f24c5bad9333e7eae683779d169175f752d549a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-media/zipball/9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32",
-                "reference": "9eada0bc4ecb47cd2cff3394721b09fd0ffd3f32",
+                "url": "https://api.github.com/repos/cookyii/module-media/zipball/9f24c5bad9333e7eae683779d169175f752d549a",
+                "reference": "9f24c5bad9333e7eae683779d169175f752d549a",
                 "shasum": ""
             },
             "require": {
@@ -407,7 +407,7 @@
                 "video",
                 "yii2"
             ],
-            "time": "2015-07-11 15:23:12"
+            "time": "2015-07-19 11:28:59"
         },
         {
             "name": "cookyii/module-postman",
@@ -415,12 +415,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-postman.git",
-                "reference": "560707c5447f397128f0a52fe4d1d677ae6929be"
+                "reference": "18c285fb8940a85629d23163ad1cbb1bc4d41f66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/560707c5447f397128f0a52fe4d1d677ae6929be",
-                "reference": "560707c5447f397128f0a52fe4d1d677ae6929be",
+                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/18c285fb8940a85629d23163ad1cbb1bc4d41f66",
+                "reference": "18c285fb8940a85629d23163ad1cbb1bc4d41f66",
                 "shasum": ""
             },
             "require": {
@@ -458,7 +458,7 @@
                 "queue",
                 "yii2"
             ],
-            "time": "2015-07-16 20:51:03"
+            "time": "2015-07-19 17:08:11"
         },
         {
             "name": "evenement/evenement",
@@ -990,7 +990,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
@@ -1048,16 +1048,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "88903c0531b90d4ecd90282b18f08c0c77bde0b2"
+                "reference": "863af6898081b34c65d42100c370b9f3c51b70ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/88903c0531b90d4ecd90282b18f08c0c77bde0b2",
-                "reference": "88903c0531b90d4ecd90282b18f08c0c77bde0b2",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/863af6898081b34c65d42100c370b9f3c51b70ca",
+                "reference": "863af6898081b34c65d42100c370b9f3c51b70ca",
                 "shasum": ""
             },
             "require": {
@@ -1097,11 +1097,11 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-09 16:07:40"
+            "time": "2015-07-22 10:11:00"
         },
         {
             "name": "symfony/routing",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
@@ -1172,16 +1172,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "ea8c13b9f5cd437bd7bf73cad8a3457a155f3727"
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ea8c13b9f5cd437bd7bf73cad8a3457a155f3727",
-                "reference": "ea8c13b9f5cd437bd7bf73cad8a3457a155f3727",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f42b2eb80f61992438661b01d0d74c6738e2ff38",
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-07-11 02:37:59"
+            "time": "2015-08-05 22:00:30"
         },
         {
             "name": "yiisoft/yii2-composer",

@@ -1,15 +1,13 @@
 "use strict";
 
-angular.module('CrmApp')
+angular.module('FrontendApp')
 
-  .controller('SignInController', [
+  .controller('ForgotPasswordController', [
     '$scope', '$http', 'ToastScope',
     function ($scope, $http, ToastScope) {
       var _config = {},
         defaultValues = {
-          email: null,
-          password: null,
-          remember: true
+          email: null
         },
         defaultErrors = {};
 
@@ -33,7 +31,7 @@ angular.module('CrmApp')
           url: $form.prop('action'),
           data: jQuery.param({
             _csrf: angular.element('meta[name="csrf-token"]').attr('content'),
-            SignInForm: $scope.data
+            ForgotPasswordForm: $scope.data
           }),
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,7 +39,9 @@ angular.module('CrmApp')
         })
           .success(function (response) {
             if (true === response.result) {
-              location.href = response.redirect;
+              ToastScope.send('success', {
+                message: response.message
+              });
             } else {
               if (typeof response.errors !== 'undefined') {
                 $scope.error = response.errors;
