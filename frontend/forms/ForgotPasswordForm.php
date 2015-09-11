@@ -38,7 +38,7 @@ class ForgotPasswordForm extends \yii\base\Model
             [
                 ['email'],
                 'exist',
-                'targetClass' => \resources\Account::className(),
+                'targetClass' => \cookyii\modules\Account\resources\Account::className(),
                 'targetAttribute' => 'email',
                 'message' => \Yii::t('account', '{attribute} not found.'),
             ],
@@ -108,7 +108,7 @@ class ForgotPasswordForm extends \yii\base\Model
                 $url = UrlManager('frontend')->createAbsoluteUrl(['/account/forgot-password/check', 'email' => $Account->email, 'hash' => $hash]);
                 $short_url = UrlManager('frontend')->createAbsoluteUrl(['/account/forgot-password/check', 'email' => $Account->email]);
 
-                $Message = \resources\Postman\Message::create('account.frontend.forgot-password.request', [
+                $Message = \cookyii\modules\Postman\resources\Postman\Message::create('account.frontend.forgot-password.request', [
                     '{user_id}' => $Account->id,
                     '{username}' => $Account->name,
                     '{hash}' => $hash,
@@ -149,7 +149,7 @@ class ForgotPasswordForm extends \yii\base\Model
         $Account->validate() && $Account->save();
 
         if (!$Account->hasErrors()) {
-            $Message = \resources\Postman\Message::create('account.frontend.forgot-password.new-password', [
+            $Message = \cookyii\modules\Postman\resources\Postman\Message::create('account.frontend.forgot-password.new-password', [
                 '{user_id}' => $Account->id,
                 '{username}' => $Account->name,
                 '{email}' => $Account->email,
@@ -177,12 +177,12 @@ class ForgotPasswordForm extends \yii\base\Model
     private $_Account = null;
 
     /**
-     * @return \resources\Account
+     * @return \cookyii\modules\Account\resources\Account
      */
     private function getAccount()
     {
         if ($this->_Account === null) {
-            $this->_Account = \resources\Account::find()
+            $this->_Account = \cookyii\modules\Account\resources\Account::find()
                 ->byEmail($this->email)
                 ->one();
         }
@@ -191,7 +191,7 @@ class ForgotPasswordForm extends \yii\base\Model
     }
 
     /**
-     * @param \resources\Account $Account
+     * @param \cookyii\modules\Account\resources\Account $Account
      * @return string
      */
     private function encryptData($Account)
@@ -207,7 +207,7 @@ class ForgotPasswordForm extends \yii\base\Model
     }
 
     /**
-     * @param \resources\Account $Account
+     * @param \cookyii\modules\Account\resources\Account $Account
      * @return array
      */
     private function decryptData($Account)

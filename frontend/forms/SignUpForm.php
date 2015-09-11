@@ -37,7 +37,7 @@ class SignUpForm extends \yii\base\Model
             /** semantic validators */
             [['name', 'email', 'password', 'password_app'], 'required'],
             [['name', 'email'], 'filter', 'filter' => 'str_clean'],
-            [['email'], 'unique', 'targetClass' => \resources\Account::className(), 'targetAttribute' => 'email'],
+            [['email'], 'unique', 'targetClass' => \cookyii\modules\Account\resources\Account::className(), 'targetAttribute' => 'email'],
             [['password'], 'compare', 'compareAttribute' => 'password_app'],
         ];
     }
@@ -68,7 +68,7 @@ class SignUpForm extends \yii\base\Model
      */
     public function register()
     {
-        $Account = new \resources\Account;
+        $Account = new \cookyii\modules\Account\resources\Account;
         $Account->setAttributes([
             'name' => $this->name,
             'email' => $this->email,
@@ -79,7 +79,7 @@ class SignUpForm extends \yii\base\Model
         $Account->validate() && $Account->save();
 
         if (!$Account->hasErrors()) {
-            $Message = \resources\Postman\Message::create('account.frontend.sign-up', [
+            $Message = \cookyii\modules\Postman\resources\Postman\Message::create('account.frontend.sign-up', [
                 '{user_id}' => $Account->id,
                 '{username}' => $Account->name,
                 '{email}' => $Account->email,
