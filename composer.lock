@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "df538f259c066aeaac7c3dcd62f1ba05",
+    "content-hash": "2c381262b7f97df3945b6c0cfbbbc74c",
     "packages": [
         {
             "name": "bower-asset/fontawesome",
@@ -266,12 +267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/base.git",
-                "reference": "0de1bfbff96e04ececcda516c19a261f3c8769f2"
+                "reference": "58dd189464f0f8669e36c68f38ac9951ffa62d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/base/zipball/0de1bfbff96e04ececcda516c19a261f3c8769f2",
-                "reference": "0de1bfbff96e04ececcda516c19a261f3c8769f2",
+                "url": "https://api.github.com/repos/cookyii/base/zipball/58dd189464f0f8669e36c68f38ac9951ffa62d60",
+                "reference": "58dd189464f0f8669e36c68f38ac9951ffa62d60",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +306,7 @@
                 "cookyii",
                 "yii2"
             ],
-            "time": "2015-09-11 20:16:02"
+            "time": "2015-09-16 19:12:29"
         },
         {
             "name": "cookyii/module-media",
@@ -313,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-media.git",
-                "reference": "5a781275dcc8eab62de1e74bc4d461d9fc1eeb57"
+                "reference": "97389337bd5c883388d72e5ea630873252bb5083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-media/zipball/5a781275dcc8eab62de1e74bc4d461d9fc1eeb57",
-                "reference": "5a781275dcc8eab62de1e74bc4d461d9fc1eeb57",
+                "url": "https://api.github.com/repos/cookyii/module-media/zipball/97389337bd5c883388d72e5ea630873252bb5083",
+                "reference": "97389337bd5c883388d72e5ea630873252bb5083",
                 "shasum": ""
             },
             "require": {
@@ -358,7 +359,7 @@
                 "video",
                 "yii2"
             ],
-            "time": "2015-09-11 20:12:16"
+            "time": "2015-09-11 21:20:08"
         },
         {
             "name": "cookyii/module-postman",
@@ -366,12 +367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cookyii/module-postman.git",
-                "reference": "6f7ec90ac788185f912f4d16d656d305c851b70d"
+                "reference": "818cdf38ca1ea77ec7afa145dd26946bb47aa480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/6f7ec90ac788185f912f4d16d656d305c851b70d",
-                "reference": "6f7ec90ac788185f912f4d16d656d305c851b70d",
+                "url": "https://api.github.com/repos/cookyii/module-postman/zipball/818cdf38ca1ea77ec7afa145dd26946bb47aa480",
+                "reference": "818cdf38ca1ea77ec7afa145dd26946bb47aa480",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +409,7 @@
                 "queue",
                 "yii2"
             ],
-            "time": "2015-09-11 20:18:10"
+            "time": "2015-09-12 13:19:23"
         },
         {
             "name": "ezyang/htmlpurifier",
