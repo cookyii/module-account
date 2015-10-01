@@ -24,7 +24,6 @@ class EditController extends Account\backend\components\Controller
         return [
             [
                 'allow' => true,
-                'actions' => ['index'],
                 'roles' => [Account\backend\Permissions::ACCESS],
             ],
         ];
@@ -35,8 +34,12 @@ class EditController extends Account\backend\components\Controller
      */
     public function actionIndex()
     {
-        $AccountEditForm = new Account\backend\forms\AccountEditForm([
-            'Account' => new \cookyii\modules\Account\resources\Account(),
+        /** @var \cookyii\modules\Account\resources\Account $AccountModel */
+        $AccountModel = \Yii::createObject(\cookyii\modules\Account\resources\Account::className());
+
+        $AccountEditForm = \Yii::createObject([
+            'class' => Account\backend\forms\AccountEditForm::className(),
+            'Account' => $AccountModel,
         ]);
 
         return $this->render('index', [

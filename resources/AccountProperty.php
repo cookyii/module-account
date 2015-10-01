@@ -1,15 +1,15 @@
 <?php
 /**
- * Property.php
+ * AccountProperty.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\Account;
+namespace cookyii\modules\Account\resources;
 
 /**
- * Class Property
- * @package cookyii\modules\Account\resources\Account
+ * Class AccountProperty
+ * @package cookyii\modules\Account\resources
  *
  * @property integer $account_id
  * @property string $key
@@ -17,7 +17,7 @@ namespace cookyii\modules\Account\resources\Account;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Property extends \yii\db\ActiveRecord
+class AccountProperty extends \yii\db\ActiveRecord
 {
 
     /**
@@ -92,14 +92,13 @@ class Property extends \yii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\Account\queries\AccountPropertyQuery
+     * @return \cookyii\modules\Account\resources\queries\AccountPropertyQuery
      */
     public static function find()
     {
         return \Yii::createObject(
-            \cookyii\modules\Account\resources\Account\queries\AccountPropertyQuery::className(), [
-                get_called_class(),
-            ]
+            \cookyii\modules\Account\resources\queries\AccountPropertyQuery::className(),
+            [get_called_class()]
         );
     }
 
