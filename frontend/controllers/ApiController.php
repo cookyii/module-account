@@ -50,20 +50,20 @@ class ApiController extends \cookyii\rest\Controller
         $result = [
             'result' => false,
             'message' => [
-                'title' => \Yii::t('account', 'Sign In'),
-                'text' => \Yii::t('account', 'Unknown error.'),
+                'title' => \Yii::t('cookyii.account', 'Sign in'),
+                'text' => \Yii::t('cookyii', 'Unknown error'),
             ]
         ];
 
-        /** @var Account\frontend\forms\SignInForm $SignInForm */
-        $SignInForm = \Yii::createObject(Account\frontend\forms\SignInForm::className());
+        /** @var Account\forms\SignInForm $SignInForm */
+        $SignInForm = \Yii::createObject(Account\forms\SignInForm::className());
 
         if ($SignInForm->load(Request()->post()) && $SignInForm->validate() && $SignInForm->login()) {
             $result = [
                 'result' => true,
                 'message' => [
-                    'title' => \Yii::t('account', 'Sign In'),
-                    'text' => \Yii::t('account', 'Welcome!'),
+                    'title' => \Yii::t('cookyii.account', 'Sign in'),
+                    'text' => \Yii::t('cookyii.account', 'Welcome!'),
                 ],
                 'redirect' => UrlManager()->createUrl(['/']),
             ];
@@ -73,8 +73,8 @@ class ApiController extends \cookyii\rest\Controller
             $result = [
                 'result' => false,
                 'message' => [
-                    'title' => \Yii::t('account', 'Sign In'),
-                    'text' => \Yii::t('account', 'Form errors.'),
+                    'title' => \Yii::t('cookyii.account', 'Sign in'),
+                    'text' => \Yii::t('cookyii.account', 'Form errors.'),
                 ],
                 'errors' => $SignInForm->getFirstErrors(),
             ];
@@ -91,20 +91,20 @@ class ApiController extends \cookyii\rest\Controller
         $result = [
             'result' => false,
             'message' => [
-                'title' => \Yii::t('account', 'Sign Up'),
-                'text' => \Yii::t('account', 'Unknown error.'),
+                'title' => \Yii::t('cookyii.account', 'Sign up'),
+                'text' => \Yii::t('cookyii', 'Unknown error'),
             ]
         ];
 
-        /** @var Account\frontend\forms\SignUpForm $SignUpForm */
-        $SignUpForm = \Yii::createObject(Account\frontend\forms\SignUpForm::className());
+        /** @var Account\forms\SignUpForm $SignUpForm */
+        $SignUpForm = \Yii::createObject(Account\forms\SignUpForm::className());
 
         if ($SignUpForm->load(Request()->post()) && $SignUpForm->validate() && $SignUpForm->register()) {
             $result = [
                 'result' => true,
                 'message' => [
-                    'title' => \Yii::t('account', 'Sign Up'),
-                    'text' => \Yii::t('account', 'Welcome!'),
+                    'title' => \Yii::t('cookyii.account', 'Sign up'),
+                    'text' => \Yii::t('cookyii.account', 'Welcome!'),
                 ],
                 'redirect' => UrlManager()->createUrl(['/']),
             ];
@@ -114,8 +114,8 @@ class ApiController extends \cookyii\rest\Controller
             $result = [
                 'result' => false,
                 'message' => [
-                    'title' => \Yii::t('account', 'Sign Up'),
-                    'text' => \Yii::t('account', 'Form errors.'),
+                    'title' => \Yii::t('cookyii.account', 'Sign up'),
+                    'text' => \Yii::t('cookyii.account', 'Form errors.'),
                 ],
                 'errors' => $SignUpForm->getFirstErrors(),
             ];
@@ -132,20 +132,20 @@ class ApiController extends \cookyii\rest\Controller
         $result = [
             'result' => false,
             'message' => [
-                'title' => \Yii::t('account', 'Forgot password'),
-                'text' => \Yii::t('account', 'Unknown error.'),
+                'title' => \Yii::t('cookyii.account', 'Forgot password'),
+                'text' => \Yii::t('cookyii', 'Unknown error'),
             ]
         ];
 
-        /** @var Account\frontend\forms\ForgotPasswordForm $ForgotPasswordForm */
-        $ForgotPasswordForm = \Yii::createObject(Account\frontend\forms\ForgotPasswordForm::className());
+        /** @var Account\forms\ForgotPasswordForm $ForgotPasswordForm */
+        $ForgotPasswordForm = \Yii::createObject(Account\forms\ForgotPasswordForm::className());
 
         if ($ForgotPasswordForm->load(Request()->post()) && $ForgotPasswordForm->validate() && $ForgotPasswordForm->sendNotification()) {
             $result = [
                 'result' => true,
                 'message' => [
-                    'title' => \Yii::t('account', 'Forgot password'),
-                    'text' => \Yii::t('account', 'Email with instructions sent.'),
+                    'title' => \Yii::t('cookyii.account', 'Forgot password'),
+                    'text' => \Yii::t('cookyii.account', 'Email with instructions sent.'),
                 ],
             ];
         }
@@ -154,8 +154,8 @@ class ApiController extends \cookyii\rest\Controller
             $result = [
                 'result' => false,
                 'message' => [
-                    'title' => \Yii::t('account', 'Forgot password'),
-                    'text' => \Yii::t('account', 'Form errors.'),
+                    'title' => \Yii::t('cookyii.account', 'Forgot password'),
+                    'text' => \Yii::t('cookyii.account', 'Form errors.'),
                 ],
                 'errors' => $ForgotPasswordForm->getFirstErrors(),
             ];
@@ -173,8 +173,8 @@ class ApiController extends \cookyii\rest\Controller
         $result = [
             'result' => false,
             'message' => [
-                'title' => \Yii::t('account', 'Fill attributes'),
-                'text' => \Yii::t('account', 'Unknown error.'),
+                'title' => \Yii::t('cookyii.account', 'Fill attributes'),
+                'text' => \Yii::t('cookyii', 'Unknown error'),
             ]
         ];
 
@@ -184,15 +184,15 @@ class ApiController extends \cookyii\rest\Controller
             throw new \yii\web\BadRequestHttpException;
         }
 
-        /** @var Account\frontend\forms\FillAttributesForm $FillAttributesForm */
-        $FillAttributesForm = \Yii::createObject(Account\frontend\forms\FillAttributesForm::className());
+        /** @var Account\forms\FillAttributesForm $FillAttributesForm */
+        $FillAttributesForm = \Yii::createObject(Account\forms\FillAttributesForm::className());
 
         if ($FillAttributesForm->load(Request()->post()) && $FillAttributesForm->validate() && $FillAttributesForm->save($Client)) {
             $result = [
                 'result' => true,
                 'message' => [
-                    'title' => \Yii::t('account', 'Fill attributes'),
-                    'text' => \Yii::t('account', 'Welcome!'),
+                    'title' => \Yii::t('cookyii.account', 'Fill attributes'),
+                    'text' => \Yii::t('cookyii.account', 'Welcome!'),
                 ],
                 'redirect' => UrlManager()->createUrl(['/account/sign/fill-redirect']),
             ];
@@ -202,8 +202,8 @@ class ApiController extends \cookyii\rest\Controller
             $result = [
                 'result' => false,
                 'message' => [
-                    'title' => \Yii::t('account', 'Fill attributes'),
-                    'text' => \Yii::t('account', 'Form errors.'),
+                    'title' => \Yii::t('cookyii.account', 'Fill attributes'),
+                    'text' => \Yii::t('cookyii.account', 'Form errors.'),
                 ],
                 'errors' => $FillAttributesForm->getFirstErrors(),
             ];

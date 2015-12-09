@@ -5,14 +5,14 @@
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\frontend\forms;
+namespace cookyii\modules\Account\forms;
 
 use rmrevin\yii\rbac\RbacFactory;
 use yii\helpers\Json;
 
 /**
  * Class FillAttributesForm
- * @package cookyii\modules\Account\frontend\forms
+ * @package cookyii\modules\Account\forms
  */
 class FillAttributesForm extends \cookyii\base\FormModel
 {
@@ -47,7 +47,7 @@ class FillAttributesForm extends \cookyii\base\FormModel
     public function attributeLabels()
     {
         return [
-            'email' => \Yii::t('account', 'Email'),
+            'email' => \Yii::t('cookyii.account', 'Email'),
         ];
     }
 

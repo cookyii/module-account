@@ -63,7 +63,8 @@ class SignController extends Account\crm\components\Controller
 
         $this->layout = '//wide';
 
-        $SignInForm = \Yii::createObject(Account\crm\forms\SignInForm::className());
+        /** @var Account\forms\SignInForm $SignInForm */
+        $SignInForm = \Yii::createObject(Account\forms\SignInForm::className());
 
         return $this->render('in', [
             'SignInForm' => $SignInForm,
@@ -133,10 +134,10 @@ class SignController extends Account\crm\components\Controller
                     case true:
                         break;
                     case 'not-activated':
-                        $Account->addError('activated', \Yii::t('account', 'Account is not activated.'));
+                        $Account->addError('activated', \Yii::t('cookyii.account', 'Account is not activated.'));
                         break;
                     case 'deleted':
-                        $Account->addError('deleted', \Yii::t('account', 'Account removed.'));
+                        $Account->addError('deleted', \Yii::t('cookyii.account', 'Account removed.'));
                         break;
                 }
 

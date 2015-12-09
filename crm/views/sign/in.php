@@ -5,14 +5,14 @@
  * @link https://rmrevin.com
  *
  * @var \yii\web\View $this
- * @var Account\crm\forms\SignInForm $SignInForm
+ * @var Account\forms\SignInForm $SignInForm
  */
 
 use cookyii\modules\Account;
 use rmrevin\yii\fontawesome\FA;
 use yii\helpers\Html;
 
-$this->title = \Yii::t('account', 'Sing in');
+$this->title = \Yii::t('cookyii.account', 'Sign in');
 
 Account\crm\assets\SignInAssetBundle::register($this);
 
@@ -51,7 +51,7 @@ Account\crm\assets\SignInAssetBundle::register($this);
                 <?php
                 $icon = FA::icon('cog', ['ng-show' => 'in_progress', 'class' => 'wo-animate'])->spin();
 
-                echo Html::submitButton($icon . ' ' . Yii::t('account', 'Sign In'), [
+                echo Html::submitButton($icon . ' ' . Yii::t('cookyii.account', 'Sign in'), [
                     'class' => 'btn btn-primary btn-block btn-flat',
                     'ng-disabled' => 'in_progress',
                 ]);
