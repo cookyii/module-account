@@ -2,8 +2,8 @@
 
 angular.module('BackendApp')
 
-  .factory('AccountListScope', [
-    '$timeout', 'QueryScope', 'ToastrScope', 'SortScope', 'FilterScope', 'AccountResource',
+  .factory('account.list.ListScope', [
+    '$timeout', 'QueryScope', 'ToastrScope', 'SortScope', 'account.list.FilterScope', 'account.AccountResource',
     function ($timeout, QueryScope, ToastrScope, SortScope, FilterScope, Account) {
       return function ($parentScope) {
 

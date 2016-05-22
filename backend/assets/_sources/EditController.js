@@ -2,7 +2,7 @@
 
 angular.module('BackendApp')
 
-  .controller('AccountEditController', [
+  .controller('account.EditController', [
     '$scope', '$http', 'QueryScope', 'ToastrScope',
     function ($scope, $http, QueryScope, ToastrScope) {
 

@@ -2,11 +2,11 @@
 
 angular.module('BackendApp')
 
-  .controller('AccountListController', [
-    '$scope', '$timeout', 'AccountListScope',
-    function ($scope, $timeout, AccountListScope) {
+  .controller('account.ListController', [
+    '$scope', '$timeout', 'account.list.ListScope',
+    function ($scope, $timeout, ListScope) {
 
-      $scope.accounts = AccountListScope($scope);
+      $scope.accounts = ListScope($scope);
 
       function _refresh() {
         $scope.accounts.reload(false);

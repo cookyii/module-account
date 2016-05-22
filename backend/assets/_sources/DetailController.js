@@ -2,8 +2,8 @@
 
 angular.module('BackendApp')
 
-  .controller('AccountDetailController', [
-    '$scope', '$timeout', 'QueryScope', 'AccountResource',
+  .controller('account.DetailController', [
+    '$scope', '$timeout', 'QueryScope', 'account.AccountResource',
     function ($scope, $timeout, QueryScope, Account) {
 
       var hash = null,

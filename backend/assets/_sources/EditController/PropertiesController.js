@@ -2,9 +2,9 @@
 
 angular.module('BackendApp')
 
-  .controller('AccountPropertiesController', [
-    '$scope', '$window', '$http', '$timeout', 'QueryScope', 'ToastrScope',
-    function ($scope, $window, $http, $timeout, QueryScope, ToastrScope) {
+  .controller('account.edit.PropertiesController', [
+    '$scope', '$http', '$timeout', 'QueryScope', 'ToastrScope',
+    function ($scope, $http, $timeout, QueryScope, ToastrScope) {
 
       var query = QueryScope($scope),
         toastr = ToastrScope($scope);
@@ -51,7 +51,7 @@ angular.module('BackendApp')
 
         $timeout(function () {
           // need for adjust angular elastic
-          angular.element($window)
+          angular.element(window)
             .trigger('resize');
         }, 100);
 
