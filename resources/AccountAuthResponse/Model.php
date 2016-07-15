@@ -1,17 +1,17 @@
 <?php
 /**
- * AccountAuthResponse.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources;
+namespace cookyii\modules\Account\resources\AccountAuthResponse;
 
 use yii\helpers\Json;
 
 /**
- * Class AccountAuthResponse
- * @package cookyii\modules\Account\resources
+ * Class Model
+ * @package cookyii\modules\Account\resources\AccountAuthResponse
  *
  * @property integer $id
  * @property string $user_ip
@@ -20,8 +20,10 @@ use yii\helpers\Json;
  * @property string $response
  * @property string $result
  */
-class AccountAuthResponse extends \cookyii\db\ActiveRecord
+class Model extends \cookyii\db\ActiveRecord
 {
+
+    static $tableName = '{{%account_auth_response}}';
 
     /**
      * @inheritdoc
@@ -58,22 +60,10 @@ class AccountAuthResponse extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountAuthResponseQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Account\resources\queries\AccountAuthResponseQuery::className(), [
-                get_called_class(),
-            ]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%account_auth_response}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 }

@@ -1,20 +1,20 @@
 <?php
 /**
- * AccountPropertyQuery.php
+ * Query.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\queries;
+namespace cookyii\modules\Account\resources\AccountProperty;
 
 /**
- * Class AccountPropertyQuery
- * @package cookyii\modules\Account\resources\queries
+ * Class Query
+ * @package cookyii\modules\Account\resources\AccountProperty
  *
- * @method \cookyii\modules\Account\resources\AccountProperty|array|null one($db = null)
- * @method \cookyii\modules\Account\resources\AccountProperty[]|array all($db = null)
+ * @method Model|array|null one($db = null)
+ * @method Model[]|array all($db = null)
  */
-class AccountPropertyQuery extends \yii\db\ActiveQuery
+class Query extends \yii\db\ActiveQuery
 {
 
     /**

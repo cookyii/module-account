@@ -1,18 +1,20 @@
 <?php
 /**
- * Account.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources;
+namespace cookyii\modules\Account\resources\Account;
 
 use cookyii\helpers\ApiAttribute;
+use cookyii\modules\Account\resources\AccountAlert\Model as AccountAlertModel;
+use cookyii\modules\Account\resources\AccountProperty\Model as AccountPropertyModel;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Account
- * @package cookyii\modules\Account\resources
+ * Class Model
+ * @package cookyii\modules\Account\resources\Account
  *
  * @property integer $id
  * @property string $name
@@ -28,18 +30,20 @@ use yii\helpers\ArrayHelper;
  * @property integer $deleted_at
  * @property integer $activated_at
  *
- * @property \cookyii\modules\Account\resources\AccountProperty[] $properties
- * @property \cookyii\modules\Account\resources\AccountAlert[] $alerts
+ * @property AccountPropertyModel[] $properties
+ * @property AccountAlertModel[] $alerts
  *
- * @property \cookyii\modules\Account\resources\helpers\AccountPresent $presentHelper
- * @property \cookyii\modules\Account\resources\helpers\AccountNotification $notificationHelper
+ * @property helpers\PresentHelper $presentHelper
+ * @property helpers\NotificationHelper $notificationHelper
  */
-class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInterface, \cookyii\interfaces\AccountInterface
+class Model extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInterface, \cookyii\interfaces\AccountInterface
 {
 
-    use \cookyii\modules\Account\resources\traits\AccountSocialTrait,
+    use traits\SocialTrait,
         \cookyii\db\traits\ActivationTrait,
         \cookyii\db\traits\SoftDeleteTrait;
+
+    static $tableName = '{{%account}}';
 
     /**
      * @var string
@@ -49,12 +53,12 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     /**
      * @var string
      */
-    public $presentHelperClass = 'cookyii\\modules\\Account\\resources\\helpers\\AccountPresent';
+    public $presentHelperClass = helpers\PresentHelper::class;
 
     /**
      * @var string
      */
-    public $notificationHelperClass = 'cookyii\\modules\\Account\\resources\\helpers\\AccountNotification';
+    public $notificationHelperClass = helpers\NotificationHelper::class;
 
     /**
      * @inheritdoc
@@ -104,7 +108,7 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     {
         $fields = parent::extraFields();
 
-        $fields['roles'] = function (Account $Model) {
+        $fields['roles'] = function (self $Model) {
             $result = [];
 
             $roles = AuthManager()->getRolesByUser($Model->id);
@@ -118,7 +122,7 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
             return $result;
         };
 
-        $fields['permissions'] = function (Account $Model) {
+        $fields['permissions'] = function (self $Model) {
             $result = [];
 
             $permissions = AuthManager()->getPermissionsByUser($Model->id);
@@ -130,14 +134,14 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
             return $result;
         };
 
-        $fields['properties'] = function (Account $Model) {
+        $fields['properties'] = function (self $Model) {
             return $Model->properties();
         };
 
         $fields['alerts'] = function (self $Model) {
             $Alerts = $this->alerts;
 
-            return empty($Alerts) ? [] : ArrayHelper::getColumn($Alerts, function (AccountAlert $Model) {
+            return empty($Alerts) ? [] : ArrayHelper::getColumn($Alerts, function (AccountAlertModel $Model) {
                 return $Model->toArray();
             });
         };
@@ -234,7 +238,7 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\helpers\AccountPresent
+     * @return \cookyii\modules\Account\resources\Account\helpers\Present
      * @throws \yii\base\InvalidConfigException
      */
     public function getPresentHelper()
@@ -243,7 +247,7 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\helpers\AccountNotification
+     * @return \cookyii\modules\Account\resources\Account\helpers\Notification
      * @throws \yii\base\InvalidConfigException
      */
     public function getNotificationHelper()
@@ -393,25 +397,25 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountQuery
+     * @return \cookyii\modules\Account\resources\AccountProperty\Query
      */
     public function getProperties()
     {
-        /** @var \cookyii\modules\Account\resources\AccountProperty $AccountPropertyModel */
-        $AccountPropertyModel = \Yii::createObject(\cookyii\modules\Account\resources\AccountProperty::className());
+        /** @var AccountPropertyModel $AccountPropertyModel */
+        $AccountPropertyModel = \Yii::createObject(AccountPropertyModel::className());
 
         return $this->hasMany($AccountPropertyModel::className(), ['account_id' => 'id']);
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountAlertQuery
+     * @return \cookyii\modules\Account\resources\AccountAlert\Query
      */
     public function getAlerts()
     {
-        /** @var \cookyii\modules\Account\resources\AccountAlert $AccountAlertModel */
-        $AccountAlertModel = \Yii::createObject(\cookyii\modules\Account\resources\AccountAlert::className());
+        /** @var AccountAlertModel $AccountAlertModel */
+        $AccountAlertModel = \Yii::createObject(AccountAlertModel::className());
 
-        /** @var \cookyii\modules\Account\resources\queries\AccountAlertQuery $Query */
+        /** @var \cookyii\modules\Account\resources\AccountAlert\Query $Query */
         $Query = $this->hasMany($AccountAlertModel::className(), ['account_id' => 'id']);
 
         return $Query
@@ -419,22 +423,11 @@ class Account extends \cookyii\db\ActiveRecord implements \yii\web\IdentityInter
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Account\resources\queries\AccountQuery::className(),
-            [get_called_class()]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%account}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 
     /**

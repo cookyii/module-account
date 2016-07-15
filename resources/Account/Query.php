@@ -1,22 +1,23 @@
 <?php
 /**
- * AccountQuery.php
+ * Query.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\queries;
+namespace cookyii\modules\Account\resources\Account;
 
 use cookyii\modules\Account;
+use cookyii\modules\Account\resources\AccountAuth\Model as AccountAuthModel;
 
 /**
- * Class AccountQuery
- * @package cookyii\modules\Account\resources\queries
+ * Class Query
+ * @package cookyii\modules\Account\resources\Account
  *
- * @method \cookyii\modules\Account\resources\Account|array|null one($db = null)
- * @method \cookyii\modules\Account\resources\Account[]|array all($db = null)
+ * @method Model|array|null one($db = null)
+ * @method Model[]|array all($db = null)
  */
-class AccountQuery extends \yii\db\ActiveQuery
+class Query extends \yii\db\ActiveQuery
 {
 
     use \cookyii\db\traits\query\ActivatedQueryTrait,
@@ -198,8 +199,8 @@ class AccountQuery extends \yii\db\ActiveQuery
      */
     protected function bySocialId($social_type, $social_id)
     {
-        /** @var $class \cookyii\modules\Account\resources\AccountAuth */
-        $class = \Yii::createObject(\cookyii\modules\Account\resources\AccountAuth::className());
+        /** @var $class AccountAuthModel */
+        $class = \Yii::createObject(AccountAuthModel::className());
 
         $Social = $class::find()
             ->bySocialType($social_type)

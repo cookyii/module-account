@@ -1,20 +1,20 @@
 <?php
 /**
- * AccountAlertQuery.php
+ * Query.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\queries;
+namespace cookyii\modules\Account\resources\AccountAlert;
 
 /**
- * Class AccountAlertQuery
- * @package cookyii\modules\Account\resources\queries
+ * Class Query
+ * @package cookyii\modules\Account\resources\AccountAlert
  *
- * @method \cookyii\modules\Account\resources\AccountAlert|array|null one($db = null)
- * @method \cookyii\modules\Account\resources\AccountAlert[]|array all($db = null)
+ * @method Model|array|null one($db = null)
+ * @method Model[]|array all($db = null)
  */
-class AccountAlertQuery extends \yii\db\ActiveQuery
+class Query extends \yii\db\ActiveQuery
 {
     
     use \cookyii\db\traits\query\DeletedQueryTrait;

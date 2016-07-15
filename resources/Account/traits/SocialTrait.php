@@ -1,19 +1,20 @@
 <?php
 /**
- * AccountSocialTrait.php
+ * SocialTrait.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\traits;
+namespace cookyii\modules\Account\resources\Account\traits;
 
+use cookyii\modules\Account\resources\AccountAuth\Model as AccountAuthModel;
 use yii\helpers\ArrayHelper;
 
 /**
- * Trait AccountSocialTrait
- * @package cookyii\modules\Account\resources\traits
+ * Trait SocialTrait
+ * @package cookyii\modules\Account\resources\Account\traits
  */
-trait AccountSocialTrait
+trait SocialTrait
 {
 
     /**
@@ -23,13 +24,13 @@ trait AccountSocialTrait
      */
     public function pushSocialLink(\yii\authclient\ClientInterface $Client)
     {
-        /** @var \cookyii\modules\Account\resources\Account $self */
+        /** @var \cookyii\modules\Account\resources\Account\Model $self */
         $self = $this;
 
         $attributes = $Client->getUserAttributes();
 
-        /** @var $class \cookyii\modules\Account\resources\AccountAuth */
-        $class = \Yii::createObject(\cookyii\modules\Account\resources\AccountAuth::className());
+        /** @var $class AccountAuthModel */
+        $class = \Yii::createObject(AccountAuthModel::className());
 
         $token = null;
         if ($Client instanceof \yii\authclient\BaseOAuth) {
@@ -47,7 +48,7 @@ trait AccountSocialTrait
      */
     public function appendClientAttributes(\yii\authclient\ClientInterface $Client)
     {
-        /** @var \cookyii\modules\Account\resources\Account $self */
+        /** @var \cookyii\modules\Account\resources\Account\Model $self */
         $self = $this;
 
         $attributes = $Client->getUserAttributes();

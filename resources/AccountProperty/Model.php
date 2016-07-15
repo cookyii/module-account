@@ -1,17 +1,17 @@
 <?php
 /**
- * AccountProperty.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources;
+namespace cookyii\modules\Account\resources\AccountProperty;
 
 use cookyii\helpers\ApiAttribute;
 
 /**
- * Class AccountProperty
- * @package cookyii\modules\Account\resources
+ * Class Model
+ * @package cookyii\modules\Account\resources\AccountProperty
  *
  * @property integer $account_id
  * @property string $key
@@ -19,8 +19,10 @@ use cookyii\helpers\ApiAttribute;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class AccountProperty extends \cookyii\db\ActiveRecord
+class Model extends \cookyii\db\ActiveRecord
 {
+
+    static $tableName = '{{%account_property}}';
 
     /**
      * @inheritdoc
@@ -102,6 +104,7 @@ class AccountProperty extends \cookyii\db\ActiveRecord
      */
     public static function push($account_id, $key, $value, $replace = true)
     {
+        /** @var static $Property */
         $Property = static::find()
             ->byAccountId($account_id)
             ->byKey($key)
@@ -125,21 +128,10 @@ class AccountProperty extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountPropertyQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Account\resources\queries\AccountPropertyQuery::className(),
-            [get_called_class()]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%account_property}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 }

@@ -1,20 +1,20 @@
 <?php
 /**
- * AccountAuthQuery.php
+ * Query.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\queries;
+namespace cookyii\modules\Account\resources\AccountAuth;
 
 /**
- * Class AccountAuthQuery
- * @package cookyii\modules\Account\resources\queries
+ * Class Query
+ * @package cookyii\modules\Account\resources\AccountAuth
  *
- * @method \cookyii\modules\Account\resources\AccountAuth|array|null one($db = null)
- * @method \cookyii\modules\Account\resources\AccountAuth[]|array all($db = null)
+ * @method Model|array|null one($db = null)
+ * @method Model[]|array all($db = null)
  */
-class AccountAuthQuery extends \yii\db\ActiveQuery
+class Query extends \yii\db\ActiveQuery
 {
 
     /**

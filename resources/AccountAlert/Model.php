@@ -1,17 +1,18 @@
 <?php
 /**
- * AccountAlert.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources;
+namespace cookyii\modules\Account\resources\AccountAlert;
 
 use cookyii\helpers\ApiAttribute;
+use cookyii\modules\Account\resources\Account\Model as AccountModel;
 
 /**
- * Class AccountAlert
- * @package cookyii\modules\Account\resources
+ * Class Model
+ * @package cookyii\modules\Account\resources\AccountAlert
  *
  * @property string $id
  * @property integer $account_id
@@ -22,12 +23,14 @@ use cookyii\helpers\ApiAttribute;
  * @property integer $updated_at
  * @property integer $deleted_at
  *
- * @property \cookyii\modules\Account\resources\Account $account
+ * @property AccountModel $account
  */
-class AccountAlert extends \cookyii\db\ActiveRecord
+class Model extends \cookyii\db\ActiveRecord
 {
 
     use \cookyii\db\traits\SoftDeleteTrait;
+
+    static $tableName = '{{%account_alert}}';
 
     /**
      * @inheritdoc
@@ -116,7 +119,7 @@ class AccountAlert extends \cookyii\db\ActiveRecord
      * @param string $message
      * @param string|null $detail
      * @param integer|null $threshold
-     * @return bool|null|AccountAlert
+     * @return bool|null|Model
      */
     public static function push($account_id, $type, $message, $detail = null, $threshold = null)
     {
@@ -152,11 +155,11 @@ class AccountAlert extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountQuery
+     * @return \cookyii\modules\Account\resources\Account\Query
      */
     public function getAccount()
     {
-        return $this->hasOne(\cookyii\modules\Account\resources\Account::class, ['id' => 'account_id']);
+        return $this->hasOne(AccountModel::class, ['id' => 'account_id']);
     }
 
     /**
@@ -173,22 +176,11 @@ class AccountAlert extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountAlertQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Account\resources\queries\AccountAlertQuery::className(),
-            [get_called_class()]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%account_alert}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 
     const TYPE_DANGER = 100;

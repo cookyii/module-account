@@ -1,33 +1,35 @@
 <?php
 /**
- * AccountNotification.php
+ * NotificationHelper.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources\helpers;
+namespace cookyii\modules\Account\resources\Account\helpers;
+
+use cookyii\modules\Postman\resources\PostmanMessage\Model as PostmanMessageModel;
 
 /**
- * Class AccountNotification
- * @package cookyii\modules\Account\resources\helpers
+ * Class NotificationHelper
+ * @package cookyii\modules\Account\resources\Account\helpers
  *
- * @property \cookyii\modules\Account\resources\Account $Model
+ * @property \cookyii\modules\Account\resources\Account\Model $Model
  */
-class AccountNotification extends \cookyii\db\helpers\AbstractHelper
+class NotificationHelper extends \cookyii\db\helpers\AbstractHelper
 {
 
     /**
      * @param string $template_code
      * @param array $placeholders
      * @param null $subject
-     * @return \cookyii\modules\Postman\resources\PostmanMessage
+     * @return PostmanMessageModel
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\web\ServerErrorHttpException
      */
     protected function createMessage($template_code, $placeholders = [], $subject = null)
     {
-        /** @var \cookyii\modules\Postman\resources\PostmanMessage $MessageModel */
-        $MessageModel = \Yii::createObject(\cookyii\modules\Postman\resources\PostmanMessage::className());
+        /** @var PostmanMessageModel $MessageModel */
+        $MessageModel = \Yii::createObject(PostmanMessageModel::className());
 
         $Message = $MessageModel::create($template_code, $placeholders, $subject);
 

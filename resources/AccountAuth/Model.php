@@ -1,17 +1,17 @@
 <?php
 /**
- * AccountAuth.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Account\resources;
+namespace cookyii\modules\Account\resources\AccountAuth;
 
 use yii\helpers\Json;
 
 /**
- * Class AccountAuth
- * @package cookyii\modules\Account\resources
+ * Class Model
+ * @package cookyii\modules\Account\resources\AccountAuth
  *
  * @property string $social_type
  * @property string $social_id
@@ -20,8 +20,10 @@ use yii\helpers\Json;
  *
  * @property \yii\authclient\OAuthToken $accessToken
  */
-class AccountAuth extends \cookyii\db\ActiveRecord
+class Model extends \cookyii\db\ActiveRecord
 {
+
+    static $tableName = '{{%account_auth}}';
 
     static $providers = ['facebook', 'github', 'google', 'linkedin', 'live', 'twitter', 'vkontakte', 'yandex'];
 
@@ -88,22 +90,10 @@ class AccountAuth extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Account\resources\queries\AccountAuthQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Account\resources\queries\AccountAuthQuery::className(), [
-                get_called_class(),
-            ]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%account_auth}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 }
